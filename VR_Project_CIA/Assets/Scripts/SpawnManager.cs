@@ -38,6 +38,12 @@ public class SpawnManager : MonoBehaviour
     {
         get { return b; }
     }
+
+    public int allBallsHitted
+    {
+        get { return ballsHitted; }
+    }
+
     public GameObject[] allSpawnsGet
     {
         get => allSpawns;
@@ -45,6 +51,7 @@ public class SpawnManager : MonoBehaviour
 
     private int a = 0;
     private int b = 0;
+    private int ballsHitted = 0;
     private GameObject spawn;
     private GameObject[] allSpawns;
 
@@ -54,6 +61,22 @@ public class SpawnManager : MonoBehaviour
         GenerateRandomSeed();
         SetSpawners();
         SetAllSpawners();
+    }
+
+    private void FixedUpdate()
+    {
+        foreach(var spawner in allSpawns)
+        {
+            var objs = spawner.GetComponent<SpawnPointsBase>().spawned;
+            for(int i = 0; i < objs.Length; i++)
+            {
+                if(objs[i] != null && objs[i].GetComponent<Ball>().gotHit == true)
+                {
+                    ballsHitted++;
+                    Destroy(objs[i]);
+                }
+            }
+        }
     }
 
     private void SetSpawners()

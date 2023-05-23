@@ -6,8 +6,16 @@ public class Ball : MonoBehaviour
 {
     public float force;
     public Vector3 angle;
+    public string batTag;
+
+    public bool gotHit
+    {
+        get { return gotHit; }
+    }
 
     private Rigidbody rb;
+    private bool hitted;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,9 +28,11 @@ public class Ball : MonoBehaviour
         rb.AddForce(transform.forward * 100 * force);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-
+        if(collision.gameObject.tag == batTag)
+        {
+            hitted = true;
+        }
     }
 }

@@ -44,6 +44,9 @@ public class SpawnedStats : MonoBehaviour
     public TextMeshProUGUI objPos;
     public TextMeshProUGUI objSize;
 
+    public TextMeshProUGUI hitBall;
+    public TextMeshProUGUI hitPoints;
+
     //Strings que almacenan el contenido inicial de los textMeshPro
     private string randomMadeSeedtext;
     private string randomGeneratedSeedtext;
