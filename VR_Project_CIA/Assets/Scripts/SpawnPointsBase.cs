@@ -107,7 +107,7 @@ public class SpawnPointsBase : MonoBehaviour
         spawnedObject.transform.localScale = scale;
         spawned[obj] = spawnedObject;
         obj++;
-        Debug.Log("New object spawned at " + pos);
+        //Debug.Log("New object spawned at " + pos);
     }
 
     private void OnDrawGizmos()

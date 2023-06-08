@@ -63,21 +63,6 @@ public class SpawnManager : MonoBehaviour
         SetAllSpawners();
     }
 
-    private void FixedUpdate()
-    {
-        foreach(var spawner in allSpawns)
-        {
-            var objs = spawner.GetComponent<SpawnPointsBase>().spawned;
-            for(int i = 0; i < objs.Length; i++)
-            {
-                if(objs[i] != null && objs[i].GetComponent<Ball>().gotHit == true)
-                {
-                    ballsHitted++;
-                    Destroy(objs[i]);
-                }
-            }
-        }
-    }
 
     private void SetSpawners()
     {

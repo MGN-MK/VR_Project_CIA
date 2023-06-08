@@ -129,3 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   angle: {x: -45, y: 0, z: 0}
+  liveTime: 5
+  batTag: Bat
+  hitted: 0
