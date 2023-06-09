@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float force;
-    public Vector3 angle;
+    public float applyForce;
 
-    public float lifeTime = 5f;
+    public float lifeTime;
     public string batTag;
     public bool hitted = false;
     public bool pointsAdded = false;
 
     private float timer = 0f;
-    private AreaType areaType;
     private Rigidbody rb;
     private PointsSystemManager pointsSystem;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.Euler(angle);
         pointsSystem = FindAnyObjectByType<PointsSystemManager>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(transform.forward * 100 * force);
+        rb.AddForce(transform.forward * 10 * applyForce);
     }
 
     private void FixedUpdate()
@@ -38,6 +36,11 @@ public class Ball : MonoBehaviour
         {
             SelfDestroy();
         }
+    }
+
+    private void SelfDestroy()
+    {
+        //Debug.Log(name + "has been destroyed.");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -57,10 +60,5 @@ public class Ball : MonoBehaviour
             pointsAdded = true;
             pointsSystem.AddPoints(other.GetComponent<HitAreaType>().hitType);
         }
-    }
-
-    private void SelfDestroy()
-    {
-        Debug.Log(name + "has been destroyed.");
     }
 }

@@ -135,11 +135,11 @@ GameObject:
   - component: {fileID: 414222049}
   m_Layer: 0
   m_Name: BallSpawner
-  m_TagString: Untagged
+  m_TagString: Spawners
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &414222049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,13 +171,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414222048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.3, z: -16.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.3, z: -35.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1517263590}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &424357553
 GameObject:
@@ -231,7 +231,7 @@ Transform:
   - {fileID: 1611045420}
   - {fileID: 715583337}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477402238
 GameObject:
@@ -258,8 +258,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477402238}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.8, z: -25.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,7 +325,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,7 +477,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &715583336
 GameObject:
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 715583339}
   - component: {fileID: 715583338}
   m_Layer: 0
-  m_Name: Tarde
+  m_Name: Late
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 763817335}
   m_Layer: 0
   m_Name: BallSpawner (1)
-  m_TagString: Untagged
+  m_TagString: Spawners
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
   spawnType: 1
   prfbs:
   - {fileID: 8613723866612044525, guid: d59c7c55a34697c41a066c0a823ee5cb, type: 3}
-  objects: 10
+  objects: 1
   timeMin: 0.5
   timeMax: 2
   sizeOffsetPercentage: 0
@@ -587,14 +587,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763817334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.3, z: -16.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 477402239}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1517263590}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828297345
 GameObject:
@@ -910,7 +910,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1248406788
 GameObject:
@@ -1195,7 +1195,7 @@ GameObject:
   - component: {fileID: 1515021936}
   - component: {fileID: 1515021935}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasUI Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1286,78 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1517263588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517263590}
+  - component: {fileID: 1517263589}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517263589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517263588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cd042bd6c3a7544b7be836d24f5166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelTag: PerfectArea
+  spawnCreated: 1
+  spawnTag:
+  - Spawners
+  spawnPointsCreated: []
+  spawnRandomMade: 0
+  spawnCount: 0
+  spawnArea: {x: 0, y: 0, z: 0}
+  prfbsSpawn: []
+  seedSpawnsMaded: 
+  currentSeedSpawnsMaded: 0
+  spawnPointsRandom: []
+  spawnRandom: 0
+  spawnRandomCount: 0
+  objSpawnMax: 0
+  objSpawnMin: 0
+  spawnTimeMax: 0
+  spawnTimeMin: 0
+  offSizeMax: 0
+  offSizeMin: 0
+  spawnRandomArea: {x: 0, y: 0, z: 0}
+  spawnRandomPos: {x: 0, y: 0, z: 0}
+  spawnersBase: []
+  seedRandomSpawns: 
+  currentSeedRandomSpawns: 0
+  spawnPointsGenerated: []
+--- !u!4 &1517263590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517263588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 19.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 414222050}
+  - {fileID: 763817336}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611045419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1370,8 @@ GameObject:
   - component: {fileID: 1611045422}
   - component: {fileID: 1611045421}
   m_Layer: 0
-  m_Name: Perfecto
-  m_TagString: Untagged
+  m_Name: Perfect
+  m_TagString: PerfectArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1547,7 +1619,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2098327717
 GameObject:
@@ -1561,7 +1633,7 @@ GameObject:
   - component: {fileID: 2098327720}
   - component: {fileID: 2098327719}
   m_Layer: 0
-  m_Name: Pronto
+  m_Name: Early
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

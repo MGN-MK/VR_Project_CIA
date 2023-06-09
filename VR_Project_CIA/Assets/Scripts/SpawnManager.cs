@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public string travelTag;
+
     [Header("Already Created SpawnPoints")]
     public bool spawnCreated;
     public string[] spawnTag;
@@ -56,7 +58,7 @@ public class SpawnManager : MonoBehaviour
     private GameObject[] allSpawns;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GenerateRandomSeed();
         SetSpawners();
@@ -143,6 +145,10 @@ public class SpawnManager : MonoBehaviour
         {
             allSpawns[b] = spawnGenerated;
             b++;
+        }
+        foreach(var spawn in allSpawns)
+        {
+            spawn.GetComponent<SpawnPointsBase>().setPoint = GameObject.FindGameObjectWithTag(travelTag).transform.position;
         }
     }
 
