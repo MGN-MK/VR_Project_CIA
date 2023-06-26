@@ -146,10 +146,6 @@ public class SpawnManager : MonoBehaviour
             allSpawns[b] = spawnGenerated;
             b++;
         }
-        foreach(var spawn in allSpawns)
-        {
-            spawn.GetComponent<SpawnPointsBase>().setPoint = GameObject.FindGameObjectWithTag(travelTag).transform.position;
-        }
     }
 
     private void OnDrawGizmos()

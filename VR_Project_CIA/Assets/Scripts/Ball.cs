@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float applyForce;
-
     public float lifeTime;
     public string batTag;
     public bool hitted = false;
     public bool pointsAdded = false;
+    public float applyForce;
 
     private float timer = 0f;
     private Rigidbody rb;
@@ -25,7 +24,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(transform.forward * 10 * applyForce);
+        rb.AddForce(transform.forward * 100 * applyForce);
     }
 
     private void FixedUpdate()
@@ -58,7 +57,7 @@ public class Ball : MonoBehaviour
         if(hitted == true && pointsAdded == false)
         {
             pointsAdded = true;
-            pointsSystem.AddPoints(other.GetComponent<HitAreaType>().hitType);
+            pointsSystem.AddPoints(other.GetComponent<HitAreaType>().hitType, gameObject);
         }
     }
 }

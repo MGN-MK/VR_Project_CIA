@@ -15,12 +15,29 @@ public class PointsSystemManager : MonoBehaviour
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI hitTypeText;
     public TextMeshProUGUI comboText;
+    public TextMeshProUGUI OffsetMs;
 
     //Private var for internal code
     private int ballsHitted = 0;
     private int totalPoints = 0;
     private int gettedPoints = 0;
     private int combo = 0;
+
+    //Private var for timeOffset
+    public float timeOffsetData
+    {
+        get { return timeOffset; }
+    }
+
+    private float distance;
+    private float speed;
+    private float timeOffset;
+    private GameObject perfectPos;
+
+    private void Start()
+    {
+        perfectPos = GameObject.FindGameObjectWithTag("PerfectArea");
+    }
 
     //Adds 1 to the count of the balls hiutted. Displays it in the UI
     public void AddBall()
@@ -30,8 +47,12 @@ public class PointsSystemManager : MonoBehaviour
     }
 
     //Adds the points obteined by hitting the balls according to the area type. Counts the combo and calculates de bonus points. Displays them in the UI
-    public void AddPoints(AreaType type)
+    public void AddPoints(AreaType type, GameObject ball)
     {
+        distance = perfectPos.transform.position.z - ball.transform.position.z;
+        speed = ball.GetComponent<Ball>().applyForce;
+        timeOffset = distance / speed;
+
         switch (type)
         {
             case AreaType.Early:
@@ -75,6 +96,7 @@ public class PointsSystemManager : MonoBehaviour
         }
 
         totalPoints += gettedPoints;
+        OffsetMs.text = timeOffset * 1000 + " ms";
         pointsText.text = "Puntos: " + totalPoints;
         hitTypeText.text = type.ToString();
     }
