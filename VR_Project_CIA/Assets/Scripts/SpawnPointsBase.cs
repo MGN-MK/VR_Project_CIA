@@ -40,7 +40,7 @@ public class SpawnPointsBase : MonoBehaviour
     private GameObject choosed;
     private GameObject spawnedObject;
     private Vector3 posSelected;
-    private Vector3 scale = new(1, 1, 1);
+    private Vector3 scale;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +101,7 @@ public class SpawnPointsBase : MonoBehaviour
 
     private void NewObject(Vector3 pos)
     {
+        scale = choosed.transform.localScale;
         scale += scale * Random.Range(-sizeOffsetPercentage, sizeOffsetPercentage) / 100;
 
         spawnedObject = Instantiate(choosed, pos, Quaternion.identity);

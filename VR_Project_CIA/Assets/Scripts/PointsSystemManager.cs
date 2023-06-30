@@ -96,7 +96,7 @@ public class PointsSystemManager : MonoBehaviour
         }
 
         totalPoints += gettedPoints;
-        OffsetMs.text = timeOffset * 1000 + " ms";
+        OffsetMs.text = (timeOffset * 1000).ToString("F2") + " ms";
         pointsText.text = "Puntos: " + totalPoints;
         hitTypeText.text = type.ToString();
     }
