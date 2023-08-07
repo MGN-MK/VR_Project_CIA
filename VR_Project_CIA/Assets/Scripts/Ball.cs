@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     public float applyForce;
 
     private float timer = 0f;
+    private bool missed = false;
     private Rigidbody rb;
     private PointsSystemManager pointsSystem;
 
@@ -31,15 +32,18 @@ public class Ball : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer >= lifeTime)
+        if(timer >= lifeTime && hitted == false && missed == false)
         {
-            SelfDestroy();
+            missed = true;
+            pointsSystem.AddPoints(AreaType.Miss, gameObject);
+            StartCoroutine(SelfDestroy());
         }
     }
 
-    private void SelfDestroy()
+    private IEnumerator SelfDestroy()
     {
-        //Debug.Log(name + "has been destroyed.");
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,16 +52,16 @@ public class Ball : MonoBehaviour
         {
             hitted = true;
             pointsSystem.AddBall();
-            SelfDestroy();
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(hitted == true && pointsAdded == false)
+        if(hitted == true && pointsAdded == false && missed == false)
         {
             pointsAdded = true;
             pointsSystem.AddPoints(other.GetComponent<HitAreaType>().hitType, gameObject);
+            StartCoroutine(SelfDestroy());
         }
     }
 }

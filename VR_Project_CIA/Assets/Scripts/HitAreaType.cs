@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum AreaType
 {
-    Early, Perfect, Late
+    Early, Perfect, Late, Miss
 }
 
 public class HitAreaType : MonoBehaviour

@@ -93,6 +93,10 @@ public class PointsSystemManager : MonoBehaviour
                 gettedPoints = LatePoints;
                 combo = 0;
                 break;
+
+            case AreaType.Miss:
+                combo = 0;
+                break;
         }
 
         totalPoints += gettedPoints;

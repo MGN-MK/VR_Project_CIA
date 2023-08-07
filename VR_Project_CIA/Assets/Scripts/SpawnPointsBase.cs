@@ -71,6 +71,8 @@ public class SpawnPointsBase : MonoBehaviour
 
     public IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(10);
+
         while (spawning)
         {
             switch (spawnType)
